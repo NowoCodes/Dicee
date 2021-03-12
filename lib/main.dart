@@ -1,9 +1,12 @@
 import 'dart:math';
 import 'package:flutter/material.dart';
 
-void main() {
-  return runApp(
-    MaterialApp(
+void main() => runApp(Dicer());
+
+class Dicer extends StatelessWidget {
+  @override
+  Widget build(BuildContext context) {
+    return MaterialApp(
       debugShowCheckedModeBanner: false,
       home: Scaffold(
         backgroundColor: Colors.red,
@@ -11,10 +14,10 @@ void main() {
           title: Text('Dicee'),
           backgroundColor: Colors.red,
         ),
-        body: DicePage(),
+      body: DicePage(),
       ),
-    ),
-  );
+    );
+  }
 }
 
 class DicePage extends StatefulWidget {
@@ -39,7 +42,7 @@ class _DicePageState extends State<DicePage> {
       child: Row(
         children: <Widget>[
           Expanded(
-            child: FlatButton(
+            child: TextButton(
               child: Image.asset(
                 'images/dice$leftDiceNumber.png',
               ),
@@ -50,7 +53,7 @@ class _DicePageState extends State<DicePage> {
           ),
           //Get students to create the second die as a challenge
           Expanded(
-            child: FlatButton(
+            child: TextButton(
               child: Image.asset(
                 'images/dice$rightDiceNumber.png',
               ),
